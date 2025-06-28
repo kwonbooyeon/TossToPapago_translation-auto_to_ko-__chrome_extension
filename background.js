@@ -10,7 +10,7 @@ chrome.runtime.onInstalled.addListener(() => {
     if (info.menuItemId === "searchText" && info.selectionText) {
       const query = info.selectionText;
       const url = `https://papago.naver.com/?sk=auto&tk=ko&hn=1&st=${encodeURIComponent(query)}`;
-      chrome.tabs.create({ url: url });
+      chrome.windows.create({ url: url });
     }
   });
   
